@@ -1,7 +1,6 @@
 import tensorflow as tf
 
 def random_crops_and_resize(tensor, *, min_size, name):
-    print('Tensor shape: ' + str(tensor.shape))
     height, width, channels = [int(x) for x in tensor.shape[1:]]
     min_height, min_width = min_size
 
