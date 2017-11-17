@@ -8,7 +8,7 @@ def random_crop_and_resize(tensor, *, min_size):
     crop_height = tf.random_uniform([], minval=min_height, maxval=height, dtype=tf.int64)
     crop_width = tf.random_uniform([], minval=min_width, maxval=width, dtype=tf.int64)
 
-    cropped = tf.random_crop(x, [crop_height, crop_width, channels])
+    cropped = tf.random_crop(tensor, [crop_height, crop_width, channels])
     resized = tf.image.resize_images(cropped, [height, width])
 
     return resized
