@@ -15,4 +15,4 @@ def random_crop_and_resize(tensor, *, min_size):
 
 
 def random_crops_and_resize(tensor, *, min_size, name):
-    return tf.map_fn(lambda img: random_crop_and_resize(img, min_size), tensor)
+    return tf.map_fn(lambda img: random_crop_and_resize(img, min_size=min_size), tensor)
